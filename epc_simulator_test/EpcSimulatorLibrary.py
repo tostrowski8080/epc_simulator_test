@@ -54,6 +54,9 @@ class EpcSimulatorLibrary:
         if bps is not None:
             body["bps"] = float(bps)
         return self._post(f"/ues/{ue_id}/bearers/{bearer_id}/traffic", body)
+    
+    def stop_traffic(self, ue_id: int, bearer_id: int = None) -> dict:
+        return self._delete(f"/ues/{ue_id}/bearers/{bearer_id}/traffic")
 
     def get_traffic_stats(self, ue_id, bearer_id):
         return self._get(f"/ues/{ue_id}/bearers/{bearer_id}/traffic")

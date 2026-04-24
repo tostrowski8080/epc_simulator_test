@@ -1,257 +1,529 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.6 on win32)" generated="2026-04-22T19:51:47.236862" rpa="false" schemaversion="5">
-<suite id="s1" name="Epc-Simulator-Tests" source="C:\Users\mysza\PycharmProjects\epc_simulator_test\epc_simulator_test\epc-simulator-tests.robot">
-<test id="s1-t1" name="Reset Clears All UEs And Bearers" line="15">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-04-24T21:50:09.063787" rpa="false" schemaversion="5">
+<suite id="s1" name="Epc-Simulator-Tests" source="C:\Users\diado\OneDrive\Dokumenty\TO\epc_simulator_test\epc_simulator_test\epc-simulator-tests.robot">
+<test id="s1-t1" name="Reset Clears All UEs And Bearers" line="19">
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
-<status status="PASS" start="2026-04-22T19:51:47.359165" elapsed="0.083750"/>
+<status status="PASS" start="2026-04-24T21:50:09.132876" elapsed="0.010880"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.442915" elapsed="0.018001"/>
+<status status="PASS" start="2026-04-24T21:50:09.144026" elapsed="0.006284"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_2}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.460916" elapsed="0.011306"/>
+<status status="PASS" start="2026-04-24T21:50:09.150545" elapsed="0.005425"/>
 </kw>
 <kw name="List Ues" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.479415" level="INFO">${before} = [1, 2]</msg>
+<msg time="2026-04-24T21:50:09.158924" level="INFO">${before} = [1, 2]</msg>
 <var>${before}</var>
-<status status="PASS" start="2026-04-22T19:51:47.472732" elapsed="0.007229"/>
+<status status="PASS" start="2026-04-24T21:50:09.156121" elapsed="0.002853"/>
 </kw>
 <kw name="Length Should Be" owner="BuiltIn">
-<msg time="2026-04-22T19:51:47.480505" level="INFO">Length is 2.</msg>
+<msg time="2026-04-24T21:50:09.159523" level="INFO">Length is 2.</msg>
 <arg>${before}</arg>
 <arg>2</arg>
 <doc>Verifies that the length of the given item is correct.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.479961" elapsed="0.000544"/>
+<status status="PASS" start="2026-04-24T21:50:09.159155" elapsed="0.000397"/>
 </kw>
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary">
-<status status="PASS" start="2026-04-22T19:51:47.481065" elapsed="0.017992"/>
+<status status="PASS" start="2026-04-24T21:50:09.159694" elapsed="0.008007"/>
 </kw>
 <kw name="List Ues" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.505114" level="INFO">${after} = []</msg>
+<msg time="2026-04-24T21:50:09.170935" level="INFO">${after} = []</msg>
 <var>${after}</var>
-<status status="PASS" start="2026-04-22T19:51:47.499057" elapsed="0.006057"/>
+<status status="PASS" start="2026-04-24T21:50:09.167885" elapsed="0.003079"/>
 </kw>
 <kw name="Length Should Be" owner="BuiltIn">
-<msg time="2026-04-22T19:51:47.505647" level="INFO">Length is 0.</msg>
+<msg time="2026-04-24T21:50:09.171334" level="INFO">Length is 0.</msg>
 <arg>${after}</arg>
 <arg>0</arg>
 <doc>Verifies that the length of the given item is correct.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.505114" elapsed="0.000533"/>
+<status status="PASS" start="2026-04-24T21:50:09.171106" elapsed="0.000256"/>
 </kw>
 <doc>After attaching two UEs and triggering reset, the simulator
 should return to a default state with no UEs present.</doc>
 <tag>reset</tag>
-<status status="PASS" start="2026-04-22T19:51:47.358197" elapsed="0.147450"/>
+<status status="PASS" start="2026-04-24T21:50:09.132341" elapsed="0.039164"/>
 </test>
-<test id="s1-t2" name="Traffic Stats Reflect Started Transfer" line="27">
+<test id="s1-t2" name="Traffic Stats Reflect Started Transfer" line="31">
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
-<status status="PASS" start="2026-04-22T19:51:47.506736" elapsed="0.005495"/>
+<status status="PASS" start="2026-04-24T21:50:09.172027" elapsed="0.002815"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.512231" elapsed="0.013156"/>
+<status status="PASS" start="2026-04-24T21:50:09.174962" elapsed="0.006900"/>
 </kw>
 <kw name="Start Traffic" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
 <arg>${BEARER_DEFAULT}</arg>
 <arg>protocol=udp</arg>
 <arg>mbps=50</arg>
-<status status="PASS" start="2026-04-22T19:51:47.525892" elapsed="0.021966"/>
+<status status="PASS" start="2026-04-24T21:50:09.182097" elapsed="0.009109"/>
 </kw>
 <kw name="Get Traffic Stats" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.556084" level="INFO">${stats} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 3298134809, 'rx_bps': 3298134809, 'duration': 0.015160083770751953}</msg>
+<msg time="2026-04-24T21:50:09.194807" level="INFO">${stats} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 8037528744, 'rx_bps': 8037528744, 'duration': 0.006220817565917969}</msg>
 <var>${stats}</var>
 <arg>${UE_1}</arg>
 <arg>${BEARER_DEFAULT}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.547858" elapsed="0.008226"/>
+<status status="PASS" start="2026-04-24T21:50:09.191381" elapsed="0.003456"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-04-22T19:51:47.556623" level="INFO">Argument types are:
+<msg time="2026-04-24T21:50:09.195190" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${stats}[target_bps]</arg>
 <arg>50000000</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.556084" elapsed="0.000539"/>
+<status status="PASS" start="2026-04-24T21:50:09.194987" elapsed="0.000240"/>
 </kw>
 <doc>After starting 50 Mbps traffic on the default bearer, the stats
 endpoint should report target_bps equal to 52 428 800.</doc>
 <tag>stats</tag>
-<status status="PASS" start="2026-04-22T19:51:47.506185" elapsed="0.051009"/>
+<status status="PASS" start="2026-04-24T21:50:09.171762" elapsed="0.023633"/>
 </test>
-<test id="s1-t3" name="Attach And Detach UE" line="36">
+<test id="s1-t3" name="Attach And Detach UE" line="40">
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
-<status status="PASS" start="2026-04-22T19:51:47.557748" elapsed="0.012386"/>
+<status status="PASS" start="2026-04-24T21:50:09.196012" elapsed="0.005472"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.570880" elapsed="0.010570"/>
+<status status="PASS" start="2026-04-24T21:50:09.201615" elapsed="0.005147"/>
 </kw>
 <kw name="List Ues" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.586596" level="INFO">${list_after_attach} = [1]</msg>
+<msg time="2026-04-24T21:50:09.209789" level="INFO">${list_after_attach} = [1]</msg>
 <var>${list_after_attach}</var>
-<status status="PASS" start="2026-04-22T19:51:47.581450" elapsed="0.005146"/>
+<status status="PASS" start="2026-04-24T21:50:09.206924" elapsed="0.002888"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${list_after_attach}</arg>
 <arg>${1}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.587141" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.210000" elapsed="0.000423"/>
 </kw>
 <kw name="Detach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.587701" elapsed="0.010783"/>
+<status status="PASS" start="2026-04-24T21:50:09.210524" elapsed="0.005959"/>
 </kw>
 <kw name="List Ues" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.604665" level="INFO">${list_after_detach} = []</msg>
+<msg time="2026-04-24T21:50:09.219695" level="INFO">${list_after_detach} = []</msg>
 <var>${list_after_detach}</var>
-<status status="PASS" start="2026-04-22T19:51:47.599151" elapsed="0.005514"/>
+<status status="PASS" start="2026-04-24T21:50:09.216666" elapsed="0.003052"/>
 </kw>
 <kw name="Should Not Contain" owner="BuiltIn">
 <arg>${list_after_detach}</arg>
 <arg>${1}</arg>
 <doc>Fails if ``container`` contains ``item`` one or more times.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.604665" elapsed="0.000540"/>
+<status status="PASS" start="2026-04-24T21:50:09.219870" elapsed="0.000355"/>
 </kw>
 <doc>A UE can be attached and then successfully detached.
 After detach it must no longer appear in the UE list.</doc>
 <tag>attach</tag>
 <tag>detach</tag>
-<status status="PASS" start="2026-04-22T19:51:47.557194" elapsed="0.048011"/>
+<status status="PASS" start="2026-04-24T21:50:09.195726" elapsed="0.024624"/>
 </test>
-<test id="s1-t4" name="Add And Delete Bearer" line="47">
+<test id="s1-t4" name="Add And Delete Bearer" line="51">
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
-<status status="PASS" start="2026-04-22T19:51:47.606304" elapsed="0.005089"/>
+<status status="PASS" start="2026-04-24T21:50:09.220841" elapsed="0.002807"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.611927" elapsed="0.010841"/>
+<status status="PASS" start="2026-04-24T21:50:09.223799" elapsed="0.005631"/>
 </kw>
 <kw name="Add Bearer" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
 <arg>${BEARER_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.623452" elapsed="0.011074"/>
+<status status="PASS" start="2026-04-24T21:50:09.229647" elapsed="0.006283"/>
 </kw>
 <kw name="Get Ue" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.641178" level="INFO">${ue_after_add} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '1': {'bearer_id': 1, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-04-24T21:50:09.238951" level="INFO">${ue_after_add} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '1': {'bearer_id': 1, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${ue_after_add}</var>
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.634526" elapsed="0.006652"/>
+<status status="PASS" start="2026-04-24T21:50:09.236107" elapsed="0.002871"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${ue_after_add}[bearers]</arg>
 <arg>1</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.641178" elapsed="0.000562"/>
+<status status="PASS" start="2026-04-24T21:50:09.239139" elapsed="0.000138"/>
 </kw>
 <kw name="Delete Bearer" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
 <arg>${BEARER_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.641740" elapsed="0.011262"/>
+<status status="PASS" start="2026-04-24T21:50:09.239397" elapsed="0.005647"/>
 </kw>
 <kw name="Get Ue" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.659338" level="INFO">${ue_after_del} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-04-24T21:50:09.248511" level="INFO">${ue_after_del} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${ue_after_del}</var>
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.653653" elapsed="0.005685"/>
+<status status="PASS" start="2026-04-24T21:50:09.245273" elapsed="0.003261"/>
 </kw>
 <kw name="Dictionary Should Not Contain Key" owner="Collections">
 <arg>${ue_after_del}[bearers]</arg>
 <arg>1</arg>
 <doc>Fails if ``key`` is found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.659864" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.248688" elapsed="0.000130"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${ue_after_del}[bearers]</arg>
 <arg>9</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.659864" elapsed="0.000541"/>
+<status status="PASS" start="2026-04-24T21:50:09.248918" elapsed="0.000080"/>
 </kw>
 <doc>A bearer can be added to an attached UE and then removed.
 After deletion only the default bearer (9) should remain.</doc>
 <tag>bearer</tag>
-<status status="PASS" start="2026-04-22T19:51:47.605740" elapsed="0.054665"/>
+<status status="PASS" start="2026-04-24T21:50:09.220608" elapsed="0.028571"/>
 </test>
-<test id="s1-t5" name="Check Active Bearers For UE" line="61">
+<test id="s1-t5" name="Check Active Bearers For UE" line="65">
 <kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
-<status status="PASS" start="2026-04-22T19:51:47.661486" elapsed="0.010967"/>
+<status status="PASS" start="2026-04-24T21:50:09.249648" elapsed="0.005628"/>
 </kw>
 <kw name="Attach Ue" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.672453" elapsed="0.010834"/>
+<status status="PASS" start="2026-04-24T21:50:09.255423" elapsed="0.005347"/>
 </kw>
 <kw name="Get Ue" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.689364" level="INFO">${ue} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-04-24T21:50:09.264130" level="INFO">${ue} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${ue}</var>
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.683891" elapsed="0.005473"/>
+<status status="PASS" start="2026-04-24T21:50:09.260965" elapsed="0.003190"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${ue}[bearers]</arg>
 <arg>9</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.689913" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.264336" elapsed="0.000121"/>
 </kw>
 <kw name="Length Should Be" owner="BuiltIn">
-<msg time="2026-04-22T19:51:47.690466" level="INFO">Length is 1.</msg>
+<msg time="2026-04-24T21:50:09.264742" level="INFO">Length is 1.</msg>
 <arg>${ue}[bearers]</arg>
 <arg>1</arg>
 <doc>Verifies that the length of the given item is correct.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.689913" elapsed="0.000553"/>
+<status status="PASS" start="2026-04-24T21:50:09.264556" elapsed="0.000207"/>
 </kw>
 <kw name="Add Bearer" owner="EpcSimulatorLibrary">
 <arg>${UE_1}</arg>
 <arg>${BEARER_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.690466" elapsed="0.011307"/>
+<status status="PASS" start="2026-04-24T21:50:09.264842" elapsed="0.005010"/>
 </kw>
 <kw name="Get Ue" owner="EpcSimulatorLibrary">
-<msg time="2026-04-22T19:51:47.709161" level="INFO">${ue} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '1': {'bearer_id': 1, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<msg time="2026-04-24T21:50:09.272464" level="INFO">${ue} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '1': {'bearer_id': 1, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
 <var>${ue}</var>
 <arg>${UE_1}</arg>
-<status status="PASS" start="2026-04-22T19:51:47.701773" elapsed="0.007388"/>
+<status status="PASS" start="2026-04-24T21:50:09.269976" elapsed="0.002508"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${ue}[bearers]</arg>
 <arg>1</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.709712" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.272640" elapsed="0.000104"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${ue}[bearers]</arg>
 <arg>9</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.709712" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.272837" elapsed="0.000075"/>
 </kw>
 <kw name="Length Should Be" owner="BuiltIn">
-<msg time="2026-04-22T19:51:47.710252" level="INFO">Length is 2.</msg>
+<msg time="2026-04-24T21:50:09.273251" level="INFO">Length is 2.</msg>
 <arg>${ue}[bearers]</arg>
 <arg>2</arg>
 <doc>Verifies that the length of the given item is correct.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.710252" elapsed="0.000000"/>
+<status status="PASS" start="2026-04-24T21:50:09.273072" elapsed="0.000202"/>
 </kw>
 <doc>After attach, UE should have only the default bearer (9).
 After adding bearer 1, both bearers should be listed.</doc>
 <tag>bearer</tag>
-<status status="PASS" start="2026-04-22T19:51:47.660952" elapsed="0.049870"/>
+<status status="PASS" start="2026-04-24T21:50:09.249427" elapsed="0.023958"/>
+</test>
+<test id="s1-t6" name="Attach UEs At Boundary IDs" line="79">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:09.273825" elapsed="0.005343"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<arg>${MAX_UE}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.279350" elapsed="0.005474"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.287567" level="FAIL">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</msg>
+<arg>${MIN_UE}</arg>
+<status status="FAIL" start="2026-04-24T21:50:09.285139" elapsed="0.003266">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</status>
+</kw>
+<kw name="List Ues" owner="EpcSimulatorLibrary">
+<var>${ues}</var>
+<status status="NOT RUN" start="2026-04-24T21:50:09.288539" elapsed="0.000015"/>
+</kw>
+<kw name="Length Should Be" owner="BuiltIn">
+<arg>${ues}</arg>
+<arg>2</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="NOT RUN" start="2026-04-24T21:50:09.288630" elapsed="0.000010"/>
+</kw>
+<doc>UE IDs have a range of (0-100),
+IDs on the edges should attach correctly.</doc>
+<tag>attach</tag>
+<tag>boundary</tag>
+<status status="FAIL" start="2026-04-24T21:50:09.273608" elapsed="0.015191">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</status>
+</test>
+<test id="s1-t7" name="Cannot Attach UEs Outside ID Range" line="88">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:09.289234" elapsed="0.005820"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.298811" level="FAIL">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</msg>
+<arg>${{ ${MIN_UE} - 1 }}</arg>
+<status status="FAIL" start="2026-04-24T21:50:09.295618" elapsed="0.003618">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</status>
+</kw>
+<arg>*HTTPError*</arg>
+<arg>Attach UE</arg>
+<arg>${{ ${MIN_UE} - 1 }}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.295348" elapsed="0.004017"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.302984" level="FAIL">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</msg>
+<arg>${{ ${MAX_UE} + 1 }}</arg>
+<status status="FAIL" start="2026-04-24T21:50:09.299700" elapsed="0.003607">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues</status>
+</kw>
+<arg>*HTTPError*</arg>
+<arg>Attach UE</arg>
+<arg>${{ ${MAX_UE} + 1 }}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.299525" elapsed="0.003838"/>
+</kw>
+<doc>UE IDs have a range of (0-100), attempting to attach
+IDs outside of the range should return error.</doc>
+<tag>attach</tag>
+<tag>boundary</tag>
+<status status="PASS" start="2026-04-24T21:50:09.289007" elapsed="0.014483"/>
+</test>
+<test id="s1-t8" name="Add Bearer At Boundary IDs" line="95">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:09.304033" elapsed="0.002881"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.307026" elapsed="0.006485"/>
+</kw>
+<if>
+<branch type="IF" condition="${MIN_BEARER} != ${BEARER_DEFAULT}">
+<kw name="Add Bearer" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<arg>${MIN_BEARER}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.313901" elapsed="0.005818"/>
+</kw>
+<status status="PASS" start="2026-04-24T21:50:09.313717" elapsed="0.006031"/>
+</branch>
+<status status="PASS" start="2026-04-24T21:50:09.313683" elapsed="0.006085"/>
+</if>
+<if>
+<branch type="IF" condition="${MAX_BEARER} != ${BEARER_DEFAULT}">
+<kw name="Add Bearer" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<arg>${MAX_BEARER}</arg>
+<status status="NOT RUN" start="2026-04-24T21:50:09.320036" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2026-04-24T21:50:09.319910" elapsed="0.000193"/>
+</branch>
+<status status="PASS" start="2026-04-24T21:50:09.319891" elapsed="0.000232"/>
+</if>
+<kw name="Get Ue" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.322879" level="INFO">${ue} = {'ue_id': 1, 'bearers': {'9': {'bearer_id': 9, 'protocol': None, 'target_bps': None, 'active': False}, '1': {'bearer_id': 1, 'protocol': None, 'target_bps': None, 'active': False}}, 'stats': {}}</msg>
+<var>${ue}</var>
+<arg>${UE_1}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.320231" elapsed="0.002668"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${ue}[bearers]</arg>
+<arg>${MIN_BEARER}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.323044" elapsed="0.000127"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${ue}[bearers]</arg>
+<arg>${MAX_BEARER}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.323321" elapsed="0.000113"/>
+</kw>
+<doc>Bearer IDs have a range of (1-9).
+IDs on the edges should attach correctly.
+If one of the edge bearers is the default one, skips it.</doc>
+<tag>bearer</tag>
+<tag>boundary</tag>
+<status status="PASS" start="2026-04-24T21:50:09.303789" elapsed="0.019745"/>
+</test>
+<test id="s1-t9" name="Cannot Add Bearer Outside ID Range" line="111">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:09.323956" elapsed="0.005797"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.329988" elapsed="0.005717"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Add Bearer" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.338846" level="FAIL">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues/1/bearers</msg>
+<arg>${UE_1}</arg>
+<arg>${{ ${MIN_BEARER} - 1 }}</arg>
+<status status="FAIL" start="2026-04-24T21:50:09.336094" elapsed="0.003223">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues/1/bearers</status>
+</kw>
+<arg>*HTTPError*</arg>
+<arg>Add Bearer</arg>
+<arg>${UE_1}</arg>
+<arg>${{ ${MIN_BEARER} - 1 }}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.335878" elapsed="0.003502"/>
+</kw>
+<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Add Bearer" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.342336" level="FAIL">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues/1/bearers</msg>
+<arg>${UE_1}</arg>
+<arg>${{ ${MAX_BEARER} + 1 }}</arg>
+<status status="FAIL" start="2026-04-24T21:50:09.339701" elapsed="0.002981">HTTPError: 422 Client Error: Unprocessable Entity for url: http://localhost:8000/ues/1/bearers</status>
+</kw>
+<arg>*HTTPError*</arg>
+<arg>Add Bearer</arg>
+<arg>${UE_1}</arg>
+<arg>${{ ${MAX_BEARER} + 1 }}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.339527" elapsed="0.003209"/>
+</kw>
+<doc>Bearer IDs have a range of (1-9), attempting to add
+IDs outside of the range should return error.</doc>
+<tag>bearer</tag>
+<tag>boundary</tag>
+<status status="PASS" start="2026-04-24T21:50:09.323759" elapsed="0.019124"/>
+</test>
+<test id="s1-t10" name="Start And Stop Traffic" line="119">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:09.343479" elapsed="0.005819"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.349490" elapsed="0.004990"/>
+</kw>
+<kw name="Start Traffic" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<arg>protocol=udp</arg>
+<arg>mbps=50</arg>
+<status status="PASS" start="2026-04-24T21:50:09.354640" elapsed="0.008004"/>
+</kw>
+<kw name="Stop Traffic" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.368601" level="INFO">${stop_resp} = {'status': 'traffic_stopped', 'ue_id': 1, 'bearer_id': 9}</msg>
+<var>${stop_resp}</var>
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.362848" elapsed="0.005777"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${stop_resp}</arg>
+<arg>status</arg>
+<arg>traffic_stopped</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.368796" elapsed="0.000123"/>
+</kw>
+<kw name="Get Traffic Stats" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:09.371687" level="INFO">${stats_before} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 14343423842, 'rx_bps': 14343423842, 'duration': 0.0034859180450439453}</msg>
+<var>${stats_before}</var>
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:09.369075" elapsed="0.002630"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-24T21:50:10.372211" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-24T21:50:09.371828" elapsed="1.000477"/>
+</kw>
+<kw name="Get Traffic Stats" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:10.377735" level="INFO">${stats_after} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 14343423842, 'rx_bps': 14343423842, 'duration': 0.0034859180450439453}</msg>
+<var>${stats_after}</var>
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:10.372894" elapsed="0.004866"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${stats_before}[duration]</arg>
+<arg>${stats_after}[duration]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-24T21:50:10.377927" elapsed="0.000250"/>
+</kw>
+<doc>Traffic can be started and stopped.
+After stopping duration from stats should stop increasing.</doc>
+<tag>traffic</tag>
+<status status="PASS" start="2026-04-24T21:50:09.343166" elapsed="1.035189"/>
+</test>
+<test id="s1-t11" name="Traffic Duration Keeps Increasing" line="132">
+<kw name="Reset Simulator" owner="EpcSimulatorLibrary" type="SETUP">
+<status status="PASS" start="2026-04-24T21:50:10.378860" elapsed="0.006315"/>
+</kw>
+<kw name="Attach Ue" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<status status="PASS" start="2026-04-24T21:50:10.385335" elapsed="0.004794"/>
+</kw>
+<kw name="Start Traffic" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<arg>protocol=udp</arg>
+<arg>mbps=50</arg>
+<status status="PASS" start="2026-04-24T21:50:10.390238" elapsed="0.007426"/>
+</kw>
+<kw name="Get Traffic Stats" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:10.401015" level="INFO">${stats_before} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 9139908476, 'rx_bps': 9139908476, 'duration': 0.0054705142974853516}</msg>
+<var>${stats_before}</var>
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:10.397926" elapsed="0.003112"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-24T21:50:11.402052" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-24T21:50:10.401187" elapsed="1.000991"/>
+</kw>
+<kw name="Get Traffic Stats" owner="EpcSimulatorLibrary">
+<msg time="2026-04-24T21:50:11.409514" level="INFO">${stats_after} = {'ue_id': 1, 'bearer_id': 9, 'protocol': 'udp', 'target_bps': 50000000, 'tx_bps': 51367546, 'rx_bps': 51367546, 'duration': 0.9733772277832031}</msg>
+<var>${stats_after}</var>
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:11.402600" elapsed="0.006951"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${stats_after}[duration] &gt; ${stats_before}[duration]</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-24T21:50:11.409813" elapsed="0.000387"/>
+</kw>
+<kw name="Stop Traffic" owner="EpcSimulatorLibrary">
+<arg>${UE_1}</arg>
+<arg>${BEARER_DEFAULT}</arg>
+<status status="PASS" start="2026-04-24T21:50:11.410345" elapsed="0.014434"/>
+</kw>
+<doc>Starts traffic and verifies that the duration
+from stats increases over time.</doc>
+<tag>traffic</tag>
+<status status="PASS" start="2026-04-24T21:50:10.378632" elapsed="1.046336"/>
 </test>
 <doc>EPC Simulator — 4 test cases covering reset, showing traffic stats, attach/detach and adding bearer.</doc>
-<status status="PASS" start="2026-04-22T19:51:47.237872" elapsed="0.473537"/>
+<status status="FAIL" start="2026-04-24T21:50:09.064699" elapsed="2.360730"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="10" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">attach</stat>
-<stat pass="2" fail="0" skip="0">bearer</stat>
+<stat pass="2" fail="1" skip="0">attach</stat>
+<stat pass="4" fail="0" skip="0">bearer</stat>
+<stat pass="3" fail="1" skip="0">boundary</stat>
 <stat pass="1" fail="0" skip="0">detach</stat>
 <stat pass="1" fail="0" skip="0">reset</stat>
 <stat pass="1" fail="0" skip="0">stats</stat>
+<stat pass="2" fail="0" skip="0">traffic</stat>
 </tag>
 <suite>
-<stat name="Epc-Simulator-Tests" id="s1" pass="5" fail="0" skip="0">Epc-Simulator-Tests</stat>
+<stat name="Epc-Simulator-Tests" id="s1" pass="10" fail="1" skip="0">Epc-Simulator-Tests</stat>
 </suite>
 </statistics>
 <errors>
